@@ -7,7 +7,10 @@
 #include "GameplayTagContainer.h"
 #include "AuraPlayerController.generated.h"
 
+<<<<<<< HEAD
 class UDamageTextComponent;
+=======
+>>>>>>> 38beebd5693c8845e644711014be0591f865d6ed
 class UInputMappingContext;
 class UInputAction;
 struct FInputActionValue;
@@ -24,12 +27,18 @@ class AURA_API AAuraPlayerController : public APlayerController
 	GENERATED_BODY()
 
 public:
+<<<<<<< HEAD
 	AAuraPlayerController();
 	virtual void PlayerTick(float DeltaTime) override;
 
 	UFUNCTION(Client, Reliable)
 	void ShowDamageNumber(float DamageAmount, ACharacter* TargetCharacter, bool bBlockedHit, bool bCriticalHit);
 
+=======
+	
+	AAuraPlayerController();
+	virtual void PlayerTick(float DeltaTime) override;
+>>>>>>> 38beebd5693c8845e644711014be0591f865d6ed
 protected:
 	
 	virtual void BeginPlay() override;
@@ -86,7 +95,10 @@ private:
 private:
 
 	void AutoRun();
+<<<<<<< HEAD
 	
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UDamageTextComponent> DamageTextComponentClass;
+=======
+>>>>>>> 38beebd5693c8845e644711014be0591f865d6ed
 };
