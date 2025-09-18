@@ -4,6 +4,7 @@
 #include "AbilitySystem/AuraAbilitySytemLibrary.h"
 
 #include "Game/AuraGameMode.h"
+#include "AuraAbilityTypes.h"
 #include "Kismet/GameplayStatics.h"
 #include "UI/WidgetController/AuraWidgetController.h"
 #include "Player/AuraPlayerState.h"
@@ -79,4 +80,5 @@ void UAuraAbilitySytemLibrary::GiveStartupAbilities(const UObject* WorldContextO
 		FGameplayAbilitySpec AbilitySpec = FGameplayAbilitySpec(AbilityClass, 1);
 		ASC->GiveAbility(AbilitySpec);
 	}
+	
 }
