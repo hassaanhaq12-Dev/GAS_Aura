@@ -1,4 +1,4 @@
-// Copyrights Hassaan Ul Haq.
+// Copyright Druid Mechanics
 
 #pragma once
 
@@ -24,10 +24,8 @@ public:
 
 	void AbilityInputTagHeld(const FGameplayTag& InputTag);
 	void AbilityInputTagReleased(const FGameplayTag& InputTag);
-	void AbilityInputTagPressed(const FGameplayTag& InputTag);
-
 protected:
+
 	UFUNCTION(Client, Reliable)
 	void ClientEffectApplied(UAbilitySystemComponent* AbilitySystemComponent, const FGameplayEffectSpec& EffectSpec, FActiveGameplayEffectHandle ActiveEffectHandle);
-	
 };

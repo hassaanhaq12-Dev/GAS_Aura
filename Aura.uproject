@@ -26,10 +26,6 @@
 			]
 		},
 		{
-			"Name": "Cargo",
-			"Enabled": true
-		},
-		{
 			"Name": "GameplayAbilities",
 			"Enabled": true
 		},

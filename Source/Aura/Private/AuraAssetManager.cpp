@@ -1,4 +1,4 @@
-// Copyrights Hassaan Ul Haq.
+// Copyright Druid Mechanics
 
 
 #include "AuraAssetManager.h"
@@ -9,7 +9,7 @@
 UAuraAssetManager& UAuraAssetManager::Get()
 {
 	check(GEngine);
-
+	
 	UAuraAssetManager* AuraAssetManager = Cast<UAuraAssetManager>(GEngine->AssetManager);
 	return *AuraAssetManager;
 }
@@ -17,7 +17,6 @@ UAuraAssetManager& UAuraAssetManager::Get()
 void UAuraAssetManager::StartInitialLoading()
 {
 	Super::StartInitialLoading();
-
 	FAuraGameplayTags::InitializeNativeGameplayTags();
 
 	// This is required to use Target Data!

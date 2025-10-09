@@ -1,4 +1,4 @@
-// Copyrights Hassaan Ul Haq.
+// Copyright Druid Mechanics
 
 #include "Aura.h"
 #include "Modules/ModuleManager.h"

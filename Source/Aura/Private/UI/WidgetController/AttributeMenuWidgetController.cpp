@@ -1,11 +1,10 @@
-// Copyrights Hassaan Ul Haq.
+// Copyright Druid Mechanics
 
 
 #include "UI/WidgetController/AttributeMenuWidgetController.h"
 
 #include "AbilitySystem/AuraAttributeSet.h"
 #include "AbilitySystem/Data/AttributeInfo.h"
-#include "AuraGameplayTags.h"
 
 void UAttributeMenuWidgetController::BindCallbacksToDependencies()
 {
@@ -14,15 +13,15 @@ void UAttributeMenuWidgetController::BindCallbacksToDependencies()
 	for (auto& Pair : AS->TagsToAttributes)
 	{
 		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(Pair.Value()).AddLambda(
-	[this, Pair](const FOnAttributeChangeData& Data)
-	{
-		BroadcastAttributeInfo(Pair.Key, Pair.Value());
-	}
+		[this, Pair](const FOnAttributeChangeData& Data)
+		{
+			BroadcastAttributeInfo(Pair.Key, Pair.Value());
+		}
 	);
 	}
 }
 
-void UAttributeMenuWidgetController::BroadcastInitialvalues()
+void UAttributeMenuWidgetController::BroadcastInitialValues()
 {
 	UAuraAttributeSet* AS = CastChecked<UAuraAttributeSet>(AttributeSet);
 	check(AttributeInfo);
@@ -31,7 +30,7 @@ void UAttributeMenuWidgetController::BroadcastInitialvalues()
 	{
 		BroadcastAttributeInfo(Pair.Key, Pair.Value());
 	}
-
+	
 }
 
 void UAttributeMenuWidgetController::BroadcastAttributeInfo(const FGameplayTag& AttributeTag, const FGameplayAttribute& Attribute) const
@@ -40,5 +39,3 @@ void UAttributeMenuWidgetController::BroadcastAttributeInfo(const FGameplayTag& 
 	Info.AttributeValue = Attribute.GetNumericValue(AttributeSet);
 	AttributeInfoDelegate.Broadcast(Info);
 }
-
-

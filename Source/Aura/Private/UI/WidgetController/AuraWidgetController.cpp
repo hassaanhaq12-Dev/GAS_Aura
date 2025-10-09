@@ -1,4 +1,4 @@
-// Copyrights Hassaan Ul Haq.
+// Copyright Druid Mechanics
 
 
 #include "UI/WidgetController/AuraWidgetController.h"
@@ -11,7 +11,7 @@ void UAuraWidgetController::SetWidgetControllerParams(const FWidgetControllerPar
 	AttributeSet = WCParams.AttributeSet;
 }
 
-void UAuraWidgetController::BroadcastInitialvalues()
+void UAuraWidgetController::BroadcastInitialValues()
 {
 	
 }

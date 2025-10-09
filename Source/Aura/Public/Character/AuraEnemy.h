@@ -1,4 +1,4 @@
-// Copyrights Hassaan Ul Haq.
+// Copyright Druid Mechanics
 
 #pragma once
 
@@ -17,25 +17,25 @@ UCLASS()
 class AURA_API AAuraEnemy : public AAuraCharacterBase, public IEnemyInterface
 {
 	GENERATED_BODY()
-	public:
+public:
 	AAuraEnemy();
-	
-	/** Enemy Interface*/
-	virtual void HighlightActor () override ;
-	virtual void UnHighlightActor () override ;
-	/** End Enemy Interface*/
 
-	/** Combat Interface*/
-	virtual int32 GetPlayerlevel() override;
+	/** Enemy Interface */
+	virtual void HighlightActor() override;
+	virtual void UnHighlightActor() override;
+	/** end Enemy Interface */
+
+	/** Combat Interface */
+	virtual int32 GetPlayerLevel() override;
 	virtual void Die() override;
-	/** End Combat Interface*/
+	/** end Combat Interface */
 
 	UPROPERTY(BlueprintAssignable)
 	FOnAttributeChangedSignature OnHealthChanged;
 
 	UPROPERTY(BlueprintAssignable)
 	FOnAttributeChangedSignature OnMaxHealthChanged;
-
+	
 	void HitReactTagChanged(const FGameplayTag CallbackTag, int32 NewCount);
 
 	UPROPERTY(BlueprintReadOnly, Category = "Combat")
@@ -46,7 +46,7 @@ class AURA_API AAuraEnemy : public AAuraCharacterBase, public IEnemyInterface
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Combat")
 	float LifeSpan = 5.f;
-
+	
 protected:
 	virtual void BeginPlay() override;
 	virtual void InitAbilityActorInfo() override;
@@ -57,8 +57,9 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Character Class Defaults")
 	ECharacterClass CharacterClass = ECharacterClass::Warrior;
-	
-	UPROPERTY(VisibleAnywhere,BlueprintReadOnly)
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	TObjectPtr<UWidgetComponent> HealthBar;
-	
+
+
 };
