@@ -1,4 +1,4 @@
-// Copyright Druid Mechanics
+// Copyright Hassaan Ul Haq
 
 
 #include "Player/AuraPlayerController.h"
@@ -35,7 +35,7 @@ void AAuraPlayerController::ShowDamageNumber_Implementation(float DamageAmount, 
 		UDamageTextComponent* DamageText = NewObject<UDamageTextComponent>(TargetCharacter, DamageTextComponentClass);
 		DamageText->RegisterComponent();
 		DamageText->AttachToComponent(TargetCharacter->GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
-		DamageText->DetachFromComponent(FDetachmentTransformRules::KeepWorldTransform);
+		DamageText->DetachFromComponent(FDetachmentTransformRules::KeepRelativeTransform);
 		DamageText->SetDamageText(DamageAmount, bBlockedHit, bCriticalHit);
 	}
 }
