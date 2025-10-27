@@ -1,4 +1,4 @@
-// Copyright Druid Mechanics
+// Copyright Hassaan Ul Haq
 
 
 #include "AI/BTService_FindNearestPlayer.h"
