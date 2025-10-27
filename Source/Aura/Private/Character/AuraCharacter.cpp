@@ -1,5 +1,4 @@
-
-// Copyright Hassaan Ul Haq
+// Copyright Druid Mechanics
 
 
 #include "Character/AuraCharacter.h"

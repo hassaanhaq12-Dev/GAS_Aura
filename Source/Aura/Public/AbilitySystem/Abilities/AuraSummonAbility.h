@@ -1,4 +1,4 @@
-// Copyright Hassaan Ul Haq
+// Copyright Druid Mechanics
 
 #pragma once
 
@@ -32,4 +32,5 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Summoning")
 	float SpawnSpread = 90.f;
+	
 };

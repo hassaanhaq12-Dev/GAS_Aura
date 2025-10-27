@@ -1,4 +1,4 @@
-// Copyright Hassaan Ul Haq
+// Copyright Druid Mechanics
 
 
 #include "AbilitySystem/Abilities/AuraMeleeAttack.h"

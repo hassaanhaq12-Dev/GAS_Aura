@@ -1,10 +1,11 @@
-// Copyright Hassaan Ul Haq
+// Copyright Druid Mechanics
 
 
 #include "AbilitySystem/Abilities/AuraSummonAbility.h"
 
-#include "Kismet/KismetArrayLibrary.h"
+#include "NiagaraBakerSettings.h"
 #include "Kismet/KismetSystemLibrary.h"
+
 
 TArray<FVector> UAuraSummonAbility::GetSpawnLocations()
 {

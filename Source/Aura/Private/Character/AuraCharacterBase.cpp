@@ -43,7 +43,6 @@ void AAuraCharacterBase::Die()
 void AAuraCharacterBase::MulticastHandleDeath_Implementation()
 {
 	UGameplayStatics::PlaySoundAtLocation(this, DeathSound, GetActorLocation(), GetActorRotation());
-
 	
 	Weapon->SetSimulatePhysics(true);
 	Weapon->SetEnableGravity(true);
@@ -56,7 +55,6 @@ void AAuraCharacterBase::MulticastHandleDeath_Implementation()
 	
 	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	Dissolve();
-	
 	bDead = true;
 }
 
@@ -69,21 +67,19 @@ void AAuraCharacterBase::BeginPlay()
 FVector AAuraCharacterBase::GetCombatSocketLocation_Implementation(const FGameplayTag& MontageTag)
 {
 	const FAuraGameplayTags& GameplayTags = FAuraGameplayTags::Get();
-	if (MontageTag.MatchesTagExact(FAuraGameplayTags::Get().CombatSocket_Weapon) && IsValid(Weapon))
+	if (MontageTag.MatchesTagExact(GameplayTags.CombatSocket_Weapon) && IsValid(Weapon))
 	{
-	return Weapon->GetSocketLocation(WeaponTipSocketName);		
+		return Weapon->GetSocketLocation(WeaponTipSocketName);
 	}
-
-	if (MontageTag.MatchesTagExact(FAuraGameplayTags::Get().CombatSocket_RightHand))
+	if (MontageTag.MatchesTagExact(GameplayTags.CombatSocket_LeftHand))
 	{
-		return GetMesh()->GetSocketLocation(RightHandSocketName);		
+		return GetMesh()->GetSocketLocation(LeftHandSocketName);
 	}
-
-	if (MontageTag.MatchesTagExact(FAuraGameplayTags::Get().CombatSocket_LeftHand))
+	if (MontageTag.MatchesTagExact(GameplayTags.CombatSocket_RightHand))
 	{
-		return GetMesh()->GetSocketLocation(LeftHandSocketName);		
+		return GetMesh()->GetSocketLocation(RightHandSocketName);
 	}
-	if (MontageTag.MatchesTagExact(FAuraGameplayTags::Get().CombatSocket_Tail))
+	if (MontageTag.MatchesTagExact(GameplayTags.CombatSocket_Tail))
 	{
 		return GetMesh()->GetSocketLocation(TailSocketName);
 	}
@@ -102,7 +98,7 @@ AActor* AAuraCharacterBase::GetAvatar_Implementation()
 
 TArray<FTaggedMontage> AAuraCharacterBase::GetAttackMontages_Implementation()
 {
-	return AttackedMontages;
+	return AttackMontages;
 }
 
 UNiagaraSystem* AAuraCharacterBase::GetBloodEffect_Implementation()
@@ -112,7 +108,7 @@ UNiagaraSystem* AAuraCharacterBase::GetBloodEffect_Implementation()
 
 FTaggedMontage AAuraCharacterBase::GetTaggedMontageByTag_Implementation(const FGameplayTag& MontageTag)
 {
-	for (FTaggedMontage TaggedMontage : AttackedMontages)
+	for (FTaggedMontage TaggedMontage : AttackMontages)
 	{
 		if (TaggedMontage.MontageTag == MontageTag)
 		{
