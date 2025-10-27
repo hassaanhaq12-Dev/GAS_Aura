@@ -1,4 +1,4 @@
-// Copyright Hassaan Ul Haq
+// Copyright Druid Mechanics
 
 
 #include "Player/AuraPlayerController.h"
@@ -105,10 +105,9 @@ void AAuraPlayerController::AbilityInputTagReleased(FGameplayTag InputTag)
 				}
 				if (NavPath->PathPoints.Num() > 0)
 				{
-				CachedDestination = NavPath->PathPoints[NavPath->PathPoints.Num() - 1];
-				bAutoRunning = true;					
+					CachedDestination = NavPath->PathPoints[NavPath->PathPoints.Num() - 1];
+					bAutoRunning = true;
 				}
-
 			}
 		}
 		FollowTime = 0.f;

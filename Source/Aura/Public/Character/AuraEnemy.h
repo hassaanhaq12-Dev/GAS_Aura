@@ -35,6 +35,9 @@ public:
 	virtual AActor* GetCombatTarget_Implementation() const override;
 	/** end Combat Interface */
 
+	UPROPERTY(BlueprintReadWrite, Category = "Combat")
+	TObjectPtr<AActor> CombatTarget;
+
 	UPROPERTY(BlueprintAssignable)
 	FOnAttributeChangedSignature OnHealthChanged;
 
@@ -51,9 +54,6 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Combat")
 	float LifeSpan = 5.f;
-
-	UPROPERTY(BlueprintReadWrite, Category = "Combat")
-	TObjectPtr<AActor> CombatTarget;
 	
 protected:
 	virtual void BeginPlay() override;
@@ -69,9 +69,10 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	TObjectPtr<UWidgetComponent> HealthBar;
 
-	UPROPERTY(EditAnywhere, Category= "AI")
+	UPROPERTY(EditAnywhere, Category = "AI")
 	TObjectPtr<UBehaviorTree> BehaviorTree;
 
 	UPROPERTY()
 	TObjectPtr<AAuraAIController> AuraAIController;
+	
 };

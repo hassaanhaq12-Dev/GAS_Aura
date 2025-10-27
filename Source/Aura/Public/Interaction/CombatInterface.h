@@ -3,12 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameplayTagContainer.h"
 #include "UObject/Interface.h"
+#include "GameplayTagContainer.h"
 #include "CombatInterface.generated.h"
 
-class UAnimMontage;
 class UNiagaraSystem;
+class UAnimMontage;
 
 USTRUCT(BlueprintType)
 struct FTaggedMontage
@@ -26,14 +26,15 @@ struct FTaggedMontage
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	USoundBase* ImpactSound = nullptr;
-	
 };
+
 // This class does not need to be modified.
 UINTERFACE(MinimalAPI, BlueprintType)
 class UCombatInterface : public UInterface
 {
 	GENERATED_BODY()
 };
+
 
 /**
  * 

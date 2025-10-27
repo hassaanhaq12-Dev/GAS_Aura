@@ -62,9 +62,7 @@ public:
 	FGameplayTag Montage_Attack_2;
 	FGameplayTag Montage_Attack_3;
 	FGameplayTag Montage_Attack_4;
-	
-	
-	
+
 	TMap<FGameplayTag, FGameplayTag> DamageTypesToResistances;
 
 	FGameplayTag Effects_HitReact;

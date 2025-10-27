@@ -184,8 +184,8 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 		);
 
 	/*
-	* Abilities
-	*/
+	 * Abilities
+	 */
 
 	GameplayTags.Abilities_Attack = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Abilities.Attack"),
@@ -193,8 +193,8 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 		);
 
 	/*
-	* Combat Sockets
-	*/
+	 * Combat Sockets
+	 */
 
 	GameplayTags.CombatSocket_Weapon = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("CombatSocket.Weapon"),
@@ -202,42 +202,41 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 		);
 
 	GameplayTags.CombatSocket_RightHand = UGameplayTagsManager::Get().AddNativeGameplayTag(
-	FName("CombatSocket.RightHand"),
-	FString("Right Hand")
-	);
-
+		FName("CombatSocket.RightHand"),
+		FString("Right Hand")
+		);
+	
 	GameplayTags.CombatSocket_LeftHand = UGameplayTagsManager::Get().AddNativeGameplayTag(
-	FName("CombatSocket.LeftHand"),
-	FString("Left Hand")
-	);
+		FName("CombatSocket.LeftHand"),
+		FString("Left Hand")
+		);
 
 	GameplayTags.CombatSocket_Tail = UGameplayTagsManager::Get().AddNativeGameplayTag(
-	FName("CombatSocket.Tail"),
-	FString("Tail")
-	);
+		FName("CombatSocket.Tail"),
+		FString("Tail")
+		);
 
 	/*
-	* Montage Tags
-	*/
+	 * Montage Tags
+	 */
 
 	GameplayTags.Montage_Attack_1 = UGameplayTagsManager::Get().AddNativeGameplayTag(
-	FName("Montage.Attack.1"),
-	FString("Attack 1")
-	);
+		FName("Montage.Attack.1"),
+		FString("Attack 1")
+		);
 
 	GameplayTags.Montage_Attack_2 = UGameplayTagsManager::Get().AddNativeGameplayTag(
-	FName("Montage.Attack.2"),
-	FString("Attack 2")
-	);
+		FName("Montage.Attack.2"),
+		FString("Attack 2")
+		);
 
 	GameplayTags.Montage_Attack_3 = UGameplayTagsManager::Get().AddNativeGameplayTag(
-	FName("Montage.Attack.3"),
-	FString("Attack 3")
-	);
+		FName("Montage.Attack.3"),
+		FString("Attack 3")
+		);
 
 	GameplayTags.Montage_Attack_4 = UGameplayTagsManager::Get().AddNativeGameplayTag(
-	FName("Montage.Attack.4"),
-	FString("Attack 4")
-	);
-	
+		FName("Montage.Attack.4"),
+		FString("Attack 4")
+		);
 }
