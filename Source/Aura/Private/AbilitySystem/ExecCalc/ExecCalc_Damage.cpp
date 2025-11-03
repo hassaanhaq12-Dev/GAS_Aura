@@ -116,6 +116,7 @@ void UExecCalc_Damage::Execute_Implementation(const FGameplayEffectCustomExecuti
 		DamageTypeValue *= ( 100.f - Resistance ) / 100.f;
 		
 		Damage += DamageTypeValue;
+		
 	}
 
 	// Capture BlockChance on Target, and determine if there was a successful Block
